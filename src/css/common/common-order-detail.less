@@ -1,0 +1,189 @@
+@import "function";
+@import "root";
+.common-order-detail{
+  font-size: 28/@root;
+  .order-detail-title{
+    background: #f2f2f2;
+    color: @main;
+    .cc();
+    padding: 10/@root 20/@root;
+    .title-left{
+      .left();
+      text-align: left;
+    }
+    .title-right{
+      .right();
+      text-align: right;
+      color: @main;
+    }
+  }
+  .order-detail-info-panel{
+    background: #fff;
+    &.need-line{
+      border-top: 1px dashed #ececec;
+    }
+    .panel-item{
+      .flex();
+      line-height: 60/@root;
+      padding:0 20/@root ;
+      .item-label{
+        padding: 10/@root 10/@root 10/@root 0;
+        width: 140/@root;
+        text-align: left;
+        display: inline-block;
+        position: relative;
+        margin-right: 10px;
+        line-height: 60/@root;
+        .text_clip(1);
+        &:after{
+          content: ':';
+          font-size: 14px;
+          position: absolute;
+          right: 0;
+          top:0;
+        }
+        &.not-before{
+          &:after{
+            content: '';
+            font-size: 14px;
+            position: absolute;
+            right: 0;
+            top:0;
+          }
+        }
+      }
+      .item-value{
+        padding: 10/@root 0;
+        flex: 1;
+        text-align: left;
+        display: inline-block;
+        .text_clip(2);
+        position: relative;
+        .value-action{
+          position: absolute;
+          top: 10/@root;
+          right: 0;
+          display: inline-block;
+          line-height: 40/@root;
+          background: @main;
+          color: #fff;
+          padding: 0 10px;
+          border-radius: 8/@root;
+        }
+      }
+      .item-button{
+        background: @main;
+        color: #fff;
+        text-align: center;
+        padding:0 20/@root ;
+        border-radius: 20/@root;
+        margin-bottom: 20/@root;
+      }
+      &.warn{
+        color: red!important;
+      }
+      .item-image{
+        .flex_item();
+        .image-title{
+          width: 100%;
+          text-align: left;
+          margin-bottom: 20/@root;
+        }
+        .image-container{
+          img{
+            min-height:220/@root ;
+            min-width: 220/@root;
+            width: 220/@root;
+            height: 220/@root;
+            margin-right: 20/@root;
+            border: #f2f2f2 1px solid;
+            &:nth-child(3n){
+              margin-right: 0;
+            }
+          }
+        }
+      }
+      .item-multiple{
+        .multiple-item{
+          background: @main;
+          border-radius: 20/@root;
+          padding:0 10/@root;
+          margin: 0 10/@root 10/@root 0;
+          line-height: 40/@root;
+          font-size: 26/@root;
+          list-style: none;
+          display: inline-block;
+          color: #fff;
+        }
+      }
+      .item-divider{
+        width: 100%;
+        height: 1/@root;
+        margin: 10/@root 0;
+        border-bottom: 1px dashed #ececec;
+      }
+    }
+  }
+  .order-detail-action-timeline{
+    background: #fff;
+    padding: 20/@root 20/@root 100/@root;
+    .log-item{
+      .action-timeline{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        .action-timeline-item {
+          position: relative;
+          padding: 0 0 12/@root;
+          list-style: none;
+          margin: 0;
+          .action-timeline-item-tail {
+            position: absolute;
+            left: 5/@root;
+            top: 0;
+            height: 100%;
+            border-left: 4/@root solid #f4f4f4;
+          }
+          .action-timeline-item-head {
+            position: absolute;
+            width: 24/@root;
+            height: 24/@root;
+            left: -6/@root;
+            background-color: #fff;
+            border-radius: 100/@root;
+            border: 2/@root solid transparent;
+          }
+          .action-timeline-item-head-blue {
+            border-color: @main;
+            color: @main;
+          }
+          .ant-timeline-item-content {
+            padding: 0 0 10/@root 36/@root;
+            font-size: 26/@root;
+            position: relative;
+            top: -3/@root;
+            p{
+              margin: 10/@root 0;
+              line-height: 40/@root;
+              .write-title{
+                &:after{
+                  content: ':';
+                }
+              }
+              .strong{
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+      .action-timeline:last-child{
+        .action-timeline-item{
+          .action-timeline-item-tail {
+            border-left: 4/@root solid #fff;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+.transition(@property:all,@duration:1s,@time-function:linear,@delay:0s){
+  -webkit-transition:arguments;
+  -moz-transition:arguments;
+  -ms-transiton:arguments;
+  -o-transition:arguments;
+  transition:arguments;
+}
+.flex(@direction:row){
+  display:-webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction:@direction
+}
+.flex_item(@flex:1.0){
+  flex:@flex;
+  -moz-box-flex:@flex; /*Firefox*/
+  -webkit-box-flex: @flex; /*Safari,Opera,Chrome*/
+  box-flex: @flex;
+}
+
+.bg_change_left_to_right(@bg:#00CCFF,@leftColor:#00aaff,@rightColor:#00f0ff){
+  background: @bg;
+  background: -moz-linear-gradient(90deg, @leftColor 0%, @rightColor 100%);
+  background: -webkit-linear-gradient(90deg, @leftColor 0%, @rightColor 100%);
+  background: linear-gradient(90deg, @leftColor 0%, @rightColor 100%);
+}
+
+.placeholder(@fontSize:14px,@color:#ececec){
+  &::-webkit-input-placeholder, &::-webkit-input-placeholder {
+    font-size:@fontSize ;
+    color: @color;
+  }
+  &:-moz-placeholder, &:-moz-placeholder {
+    font-size:@fontSize ;
+    color: @color;
+  }
+  &::-moz-placeholder, &::-moz-placeholder {
+    font-size:@fontSize ;
+    color: @color;
+  }
+  &:-ms-input-placeholder, &:-ms-input-placeholder {
+    font-size:@fontSize ;
+    color: @color;
+  }
+}
+
+.text_clip(@line:1){
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: @line;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+}
+
+
+
+.cc(){
+  zoom: 1;
+  &:after{
+    display:block;
+    clear:both;content:"";visibility:hidden;height:0;
+  }
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
