@@ -3,10 +3,19 @@ import App from './App'
 import router from './router'
 import './components'
 import './css/icon.css'
-import {Style} from "cube-ui"
 require("!style-loader!css-loader!less-loader!./css/base");
 require("!style-loader!css-loader!less-loader!./css/common");
 import "./lib/jQuery.min"
+import {
+  /* eslint-disable no-unused-vars */
+  Style,
+  Dialog,
+  Toast
+} from 'cube-ui'
+
+Vue.use(Dialog);
+Vue.use(Toast);
+
 
 Vue.config.productionTip = false;
 
