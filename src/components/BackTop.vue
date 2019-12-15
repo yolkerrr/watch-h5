@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a href="javascript:void(0)" class="floatTotop" style=""></a>
+    <a href="javascript:void(0)" class="floatTotop" style="" @click.prevent.stop="goBack"></a>
   </div>
 </template>
 
@@ -12,24 +12,24 @@
 
       }
     },
+    props:{
+      show:{
+        type:Boolean,
+        default:false
+      }
+    },
+    watch:{
+      show(newVal){
+        newVal?$('.floatTotop').fadeIn():$('.floatTotop').fadeOut();
+      }
+    },
     mounted(){
       $('.floatTotop').fadeOut();
-      $(window).scroll(function(){
-        if($(window).scrollTop()==0){
-          $('.floatTotop').fadeOut();
-          $('.floatshare').fadeOut();
-        }
-        else{
-          $('.floatTotop').fadeIn();
-          $('.floatshare').fadeIn();
-        }
-      });
-      $('.floatTotop').live('click', function(){
-        $(window).scrollTop(0);
-      });
     },
     methods: {
-
+      goBack(){
+        this.$emit("back");
+      }
     }
   }
 </script>

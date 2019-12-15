@@ -23,7 +23,7 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js'
+    app: ["babel-polyfill","./src/main.js"]
   },
   output: {
     path: config.build.assetsRoot,
@@ -48,6 +48,14 @@ module.exports = {
           'style-loader',
           { loader: 'css-loader', options: { importLoaders: 1 } },
           { loader: 'less-loader', options: {modules: true} },
+        ]
+      },
+      {
+        test: /\.styl$/,
+        use: [
+          'style-loader',
+          { loader: 'css-loader', options: { importLoaders: 1 } },
+          'stylus-loader',
         ]
       },
       {

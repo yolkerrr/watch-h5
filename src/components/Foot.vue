@@ -21,14 +21,14 @@
     name: 'Foot',
     data () {
       return {
-        selectedLabelDefault:"商 品",
+        selectedLabelDefault:"腕 表",
         tabs:[
           {
-            label: '商 品',
+            label: '腕 表',
             icon: 'cubeic-home',
             path:"/index"
           }, {
-            label: '我 的',
+            label: '留 言',
             icon: 'cubeic-like',
             path:"/mine"
           }

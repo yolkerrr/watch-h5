@@ -1,13 +1,13 @@
 <template>
   <div class="common-goodsItem">
-    <div class="box">
+    <div class="box" @click.prevent.stop="goDetail">
       <div class="box-watch-inner">
-        <div class="price_inner_img"><img src="http://productimg.xbiao.com/25/240_360/512714567315376.jpg" alt="劳力士潜航者型116610LV-97200 绿盘"></div>
+        <div class="price_inner_img"><img :src="goods['slideUrls'][0]"></div>
         <div class="price_inner_txt">
-          <em>劳力士潜航者型</em>
-          <em>116610LV-97200 绿盘</em>
-          <span>自动机械,40mm,904L不锈钢(蚝式钢)</span>
-          <i>¥70500</i>
+          <em>{{goods.watchName}}</em>
+          <em>{{goods.model}}</em>
+          <span>{{goods.classify}},{{goods.spec}}</span>
+          <i>¥{{goods.price}}</i>
         </div>
       </div>
     </div>
@@ -22,8 +22,21 @@ export default {
 
     }
   },
+  props:{
+    goods:{
+      type:Object,
+      default:()=>{{}}
+    }
+  },
   methods: {
-
+    goDetail(){
+      this.$router.push({
+        path:"/detail",
+        query:{
+          id:this.goods.watchId
+        }
+      })
+    }
   }
 }
 </script>
@@ -45,13 +58,18 @@ export default {
         background: #fff;
         .price_inner_img{
           padding-top: 5px;
+          width: 90%;
+          min-width: 90%;
+          max-width: 90%;
+          margin: 0 auto;
           img{
-            width: 90%;
-            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
           }
         }
         .price_inner_txt{
-          padding: 7.5px 0;
+          padding: 7.5px;
           em {
             display: block;
             font-size: 14px;

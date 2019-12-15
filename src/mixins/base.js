@@ -13,6 +13,13 @@ export default{
         icon: 'cubeic-warn'
       }).show()
     },
+    showToast(msg){
+      const _toast  = this.$createToast({
+        txt:msg,
+        type: 'txt'
+      });
+      _toast.show();
+    },
     async $request(fn){
       const _toast  = this.$createToast({
         time:0,
